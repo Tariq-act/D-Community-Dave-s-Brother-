@@ -29,8 +29,24 @@ const Header = () => {
           <li className="cursor-pointer">Contacts</li>
         </ul>
         {isLoggedIn === true ? (
-          <div className="w-12 h-12 border-2 rounded-full cursor-pointer">
+          <div
+            className="relative w-12 h-12 border-2 rounded-full cursor-pointer"
+            onClick={openMenuHandler}
+          >
             <MdOutlineAccountCircle className="w-full h-full" />
+            {isLoggedIn && isMenuActive && (
+              <ul className="absolute top-10 right-1/2  bg-white rounded-md border-2 flex flex-col justify-center items-center  font-semibold text-base">
+                <li className="cursor-pointer hover:bg-blue-200 w-full px-4 py-3">
+                  Settings
+                </li>
+                <li
+                  className="cursor-pointer hover:bg-blue-200 w-full px-4 py-3"
+                  onClick={logoutHandler}
+                >
+                  Logout
+                </li>
+              </ul>
+            )}
           </div>
         ) : (
           <button className="border-2 font-semibold bg-gray-200 border-blue-300 px-4 py-2">
