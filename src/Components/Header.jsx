@@ -47,8 +47,8 @@ const Header = () => {
           <div className="w-8 h-1 bg-black"></div>
         </div>
         {isMenuActive && (
-          <ul className="absolute top-6 right-0 w-fit bg-blue-100 flex flex-col justify-center items-center  font-semibold text-base">
-            <li className="cursor-pointer hover:bg-red-100 w-full px-2 py-3">
+          <ul className="absolute top-6 right-0 bg-white rounded-md border-2 flex flex-col justify-center items-center  font-semibold text-base">
+            <li className="cursor-pointer hover:bg-blue-200 w-44 px-2 py-3 flex justify-center items-center">
               {isLoggedIn === true ? (
                 <div className="w-full flex justify-start items-center">
                   <MdOutlineAccountCircle className="border-2 rounded-full text-5xl" />
@@ -60,18 +60,18 @@ const Header = () => {
                 </button>
               )}
             </li>
-            <li className="cursor-pointer hover:bg-red-100 w-full px-4 py-3">
+            <li className="cursor-pointer hover:bg-blue-200 w-full px-4 py-3">
               Services
             </li>
-            <li className="cursor-pointer hover:bg-red-100 w-full  px-4 py-3">
+            <li className="cursor-pointer hover:bg-blue-200 w-full  px-4 py-3">
               About Us
             </li>
-            <li className="cursor-pointer hover:bg-red-100 w-full  px-4 py-3">
+            <li className="cursor-pointer hover:bg-blue-200 w-full  px-4 py-3">
               Contacts Us
             </li>
             {isLoggedIn && (
               <li
-                className="cursor-pointer hover:bg-red-100 w-full  px-4 py-3"
+                className="cursor-pointer hover:bg-blue-200 w-full  px-4 py-3"
                 onClick={logoutHandler}
               >
                 Logout
