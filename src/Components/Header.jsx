@@ -10,6 +10,10 @@ const Header = () => {
     setIsMenuActive(!isMenuActive);
   }
 
+  function loginHandler() {
+    setIsLoggedIn(true);
+  }
+
   function logoutHandler() {
     setIsLoggedIn(false);
   }
@@ -49,7 +53,10 @@ const Header = () => {
             )}
           </div>
         ) : (
-          <button className="border-2 font-semibold bg-gray-200 border-blue-300 px-4 py-2">
+          <button
+            className="border-2 font-semibold bg-gray-200 border-blue-300 px-4 py-2"
+            onClick={loginHandler}
+          >
             Login/Signup
           </button>
         )}
@@ -71,7 +78,10 @@ const Header = () => {
                   <h3>Name Here</h3>
                 </div>
               ) : (
-                <button className="border-2 font-semibold bg-gray-200 border-blue-300 px-4 py-2">
+                <button
+                  className="border-2 font-semibold bg-gray-200 border-blue-300 px-4 py-2"
+                  onClick={loginHandler}
+                >
                   Login/Singup
                 </button>
               )}
