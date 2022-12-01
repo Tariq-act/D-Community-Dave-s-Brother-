@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ourTechnologies } from "../../data/OurTechnologies";
+import { ourTechnologies } from "../../data/Logos";
 
 const OurTechnologies = () => {
   return (
