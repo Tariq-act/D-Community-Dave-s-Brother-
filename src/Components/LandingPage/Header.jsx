@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
 import { MdOutlineAccountCircle } from "react-icons/md";
+
+import Logo from "../../assets/Logo.png";
 
 const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -19,16 +20,15 @@ const Header = () => {
   }
 
   return (
-    <header className="w-screen flex justify-between items-center border-b-2 px-6 md:px-10 py-3 md:py-4">
-      <div className="flex justify-center items-center text-2xl md:text-3xl">
-        <h1 className="flex justify-center items-center text-white text-center rounded-md px-3 py-2 bg-black font-black">
-          D-Community
-        </h1>
+    <header className="w-screen flex justify-between items-center border-b-[0.5px] px-6 md:px-10 shadow-md">
+      <div>
+        <img src={Logo} alt="Logo" className="w-10" />
       </div>
+
       {/* nav for desktop */}
       <nav className="hidden md:flex justify-center items-center gap-10">
-        <ul className="hidden md:flex justify-center items-center gap-8 text-base font-semibold">
-          <li className="cursor-pointer">Services</li>
+        <ul className="hidden md:flex justify-center items-center gap-8 text-base">
+          <li className="cursor-pointer px-2 py-1">Services</li>
           <li className="cursor-pointer">About US</li>
           <li className="cursor-pointer">Contacts</li>
         </ul>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import Header from "./Components/Header";
+import Header from "./Components/LandingPage/Header";
 import ClientOBPage from "./Pages/ClientOBPage";
 import DeveloperOBPage from "./Pages/DeveloperOBPage";
 import LandingPage from "./Pages/LandingPage";
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className="pt-4">
+      <main>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<LandingPage />} />
