@@ -1,7 +1,7 @@
 import React from "react";
 
 const VendorOB = () => {
-  return <div>VendorOB</div>;
+  return <div>Vendor Onboarding</div>;
 };
 
 export default VendorOB;
