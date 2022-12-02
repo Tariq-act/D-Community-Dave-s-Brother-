@@ -1,10 +1,51 @@
 import React from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
-const Card = () => {
+var settings = {
+  // dots: true,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 500,
+  autoplaySpeed: 2000,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
+const Card = ({ value }) => {
   return (
-    <div className=' shrink-0 p-6 w-50 m-auto bg-white rounded-md shadow-lg'>
+    <div className='w-72 shrink-0 p-4  m-auto bg-white rounded-md shadow-lg'>
       <img src={require(`../../assets/YouTube-Thumbnail.png`)} alt='' />
       <div>
+        <p className='pt-3'>{value}</p>
         <p className='pt-3'>Lorem ipsum</p>
         <p className='pt-3'>Lorem ipsum</p>
         <p className='pt-3'>Lorem ipsum</p>
@@ -12,11 +53,20 @@ const Card = () => {
     </div>
   );
 };
-const items = [1, 2, 3, 4, 5, 6];
+const items = [
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 },
+  { id: 6 },
+];
 
 const Carousal = () => {
+  // const [isModal, setIsModal] = useState(false);
+
   return (
-    <div className='py-20'>
+    <div className='py-28'>
       <h1 className='font-bold text-4xl text-center'>
         Hire The Best Developer
       </h1>
@@ -40,15 +90,19 @@ const Carousal = () => {
         </svg>
       </div>
 
-      <p className='text-center'>
+      <p className='text-center z-50'>
         Dcommunity combines global reach and AI to deliver your ideal remote
         developers
       </p>
-      <div>
-        <div className='bg-blue-600 w-full py-6 h-fit mt-20 flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 scrollbar-hide'>
-          {items.map((item) => (
-            <Card />
-          ))}
+      <div className='relative'>
+        <div className='carousal bg-blue-600 w-full py-20 h-fit mt-14 '>
+          <Slider {...settings}>
+            {/* <div className='flex gap-6 px-6'> */}
+            {items.map((item, idx) => (
+              <Card key={idx} value={item.id} />
+            ))}
+            {/* </div> */}
+          </Slider>
         </div>
       </div>
     </div>
