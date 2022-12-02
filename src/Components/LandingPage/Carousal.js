@@ -42,13 +42,13 @@ var settings = {
 
 const Card = ({ value }) => {
   return (
-    <div className='w-72 shrink-0 p-4  m-auto bg-white rounded-md shadow-lg'>
+    <div className='w-72 shrink-0 p-4 m-auto bg-white rounded-md shadow-lg'>
       <img src={require(`../../assets/YouTube-Thumbnail.png`)} alt='' />
-      <div>
-        <p className='pt-3'>{value}</p>
-        <p className='pt-3'>Lorem ipsum</p>
-        <p className='pt-3'>Lorem ipsum</p>
-        <p className='pt-3'>Lorem ipsum</p>
+      <div className='mb-4'>
+        <p className='pt-1'>{value}</p>
+        <p className='pt-1'>Lorem ipsum: Lorem ipsum</p>
+        <p className='pt-1'>Lorem ipsum: Lorem ipsum</p>
+        <p className='pt-1'>Lorem ipsum: Lorem ipsum</p>
       </div>
     </div>
   );
@@ -97,11 +97,9 @@ const Carousal = () => {
       <div className='relative'>
         <div className='carousal bg-blue-600 w-full py-20 h-fit mt-14 '>
           <Slider {...settings}>
-            {/* <div className='flex gap-6 px-6'> */}
             {items.map((item, idx) => (
               <Card key={idx} value={item.id} />
             ))}
-            {/* </div> */}
           </Slider>
         </div>
       </div>
