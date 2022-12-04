@@ -23,7 +23,7 @@ var settings = {
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 800,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -31,7 +31,7 @@ var settings = {
       },
     },
     {
-      breakpoint: 480,
+      breakpoint: 500,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -95,7 +95,7 @@ const Carousal = () => {
         developers
       </p>
       <div className='relative'>
-        <div className='carousal bg-blue-600 w-full py-20 h-fit mt-14 '>
+        <div className='carousal bg-blue-600 w-full py-20 px-8 h-fit mt-14'>
           <Slider {...settings}>
             {items.map((item, idx) => (
               <Card key={idx} value={item.id} />

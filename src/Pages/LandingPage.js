@@ -1,5 +1,4 @@
 import React from 'react';
-import Index from '../Components/LandingPage/Carousal';
 import Carousal from '../Components/LandingPage/Carousal';
 
 import Hero from '../Components/LandingPage/Hero';
@@ -11,7 +10,6 @@ const LandingPage = () => {
     <>
       <Hero />
       <Carousal />
-      {/* <Index /> */}
       <Services />
       <OurTechnologies />
     </>
